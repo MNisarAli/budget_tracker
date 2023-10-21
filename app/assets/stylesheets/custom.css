@@ -18,9 +18,8 @@ a {
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  margin: 0;
 }
 
 .notice {
@@ -115,4 +114,21 @@ a {
 
 .splash-container .btn-secondary {
   color: #434b54;
+}
+
+.categories-container {
+  margin-bottom: 4.5rem;
+}
+
+.add-category-btn {
+  background-color: #60b524;
+  padding: 1.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.new-category-btn {
+  padding: 0.75rem 5.2rem;
 }
