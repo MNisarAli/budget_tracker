@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_120416) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "icon"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -30,8 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_120416) do
 
   create_table "expenses", force: :cascade do |t|
     t.bigint "author_id", null: false
-    t.string "name"
-    t.decimal "amount"
+    t.string "name", null: false
+    t.decimal "amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_expenses_on_author_id"
