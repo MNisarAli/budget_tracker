@@ -50,8 +50,13 @@ RSpec.describe 'Expenses', type: :request do
       delete user_category_expense_path(@user, @category, @expense)
     end
 
-    it 'redirects to the index page' do
-      expect(response).to redirect_to(user_category_path)
+    it 'redirects to the categories page' do
+      expect(response).to redirect_to(user_categories_path(@user))
+    end
+
+    it 'includes the correct flash message' do
+      follow_redirect!
+      expect(response.body).to include('Expense has been successfully removed')
     end
   end
 end

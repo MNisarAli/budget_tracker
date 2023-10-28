@@ -23,7 +23,8 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
     @expense.destroy
     flash[:notice] = 'Expense has been successfully removed'
-    redirect_to user_category_path
+
+    redirect_to request.referrer || user_categories_path
   end
 
   private
