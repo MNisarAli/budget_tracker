@@ -21,21 +21,11 @@ category8 = Category.create(name: "Online transactions", icon: "https://cdn.icon
 
 
 # Create some sample expenses.
-expense1 = Expense.create(name: "Pizza", amount: 10, author_id: user.id)
-expense2 = Expense.create(name: "Shirt", amount: 20, author_id: user.id)
-expense3 = Expense.create(name: "Carrot's & Banana's", amount: 15, author_id: user.id)
-expense4 = Expense.create(name: "Bus", amount: 30, author_id: user.id)
-expense5 = Expense.create(name: "Book", amount: 10, author_id: user.id)
-expense6 = Expense.create(name: "Gift", amount: 45, author_id: user.id)
-expense7 = Expense.create(name: "Investment", amount: 900, author_id: user.id)
-expense8 = Expense.create(name: "Online transaction", amount: 85, author_id: user.id)
-
-# Associate expenses with categories.
-expense1.categories << category1
-expense2.categories << category2
-expense3.categories << category3
-expense4.categories << category4
-expense5.categories << category5
-expense6.categories << category6
-expense7.categories << category7
-expense8.categories << category8
+expense1 = Expense.create(name: "Pizza", amount: 10, author_id: user.id, category_ids: [category1.id, category8.id])
+expense2 = Expense.create(name: "Shirt", amount: 20, author_id: user.id, category_ids: [category2.id, category6.id])
+expense3 = Expense.create(name: "Carrot's & Banana's", amount: 15, author_id: user.id, category_ids: [category3.id])
+expense4 = Expense.create(name: "Bus", amount: 30, author_id: user.id, category_ids: [category4.id])
+expense5 = Expense.create(name: "Book", amount: 10, author_id: user.id, category_ids: [category5.id, category8.id])
+expense6 = Expense.create(name: "Gift", amount: 45, author_id: user.id, category_ids: [category6.id])
+expense7 = Expense.create(name: "Investment", amount: 900, author_id: user.id, category_ids: [category7.id])
+expense8 = Expense.create(name: "Online transaction", amount: 85, author_id: user.id, category_ids: [category8.id])
