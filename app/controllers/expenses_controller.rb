@@ -21,8 +21,11 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense = Expense.find(params[:id])
-    @expense.destroy
-    flash[:notice] = 'Expense has been successfully removed'
+    if @expense.destroy
+      flash[:notice] = 'Expense has been successfully removed'
+    else
+      flash[:alert] = 'Error deleting expense'
+    end
 
     redirect_to request.referrer || user_categories_path
   end
