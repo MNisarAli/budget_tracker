@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   # Define routes for users, categories, and expenses
   resources :users do
-    resources :categories do
-      resources :expenses
+    resources :categories, except: %i[edit update] do
+      resources :expenses, only: %i[new create destroy]
     end
   end
 
