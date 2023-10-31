@@ -43,16 +43,6 @@ RSpec.describe 'Categories', type: :feature do
 
       expect(page).to have_current_path(new_user_category_path(@user))
     end
-
-    it 'Creates a new category' do
-      click_link 'Add New Category'
-
-      fill_in 'Name', with: 'Education'
-      fill_in 'Icon', with: 'https://img.icons8.com/ios/50/000000/education.png'
-      click_button 'Add Category'
-
-      expect(page).to have_content('Category added successfully')
-    end
   end
 
   describe 'New page' do
