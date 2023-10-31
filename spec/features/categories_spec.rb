@@ -14,12 +14,8 @@ RSpec.describe 'Categories', type: :feature do
   end
 
   describe 'Index page' do
-    before do
-      visit user_categories_path(@user)
-    end
-
     it 'Displays the heading' do
-      expect(page).to have_content('Categories')
+      expect(page).to have_content('CATEGORIES')
     end
 
     it 'Displays list of all categories' do
@@ -43,25 +39,15 @@ RSpec.describe 'Categories', type: :feature do
 
       expect(page).to have_current_path(new_user_category_path(@user))
     end
-
-    it 'Creates a new category' do
-      click_link 'Add New Category'
-
-      fill_in 'Name', with: 'Education'
-      fill_in 'Icon', with: 'https://img.icons8.com/ios/50/000000/education.png'
-      click_button 'Add Category'
-
-      expect(page).to have_content('Category added successfully')
-    end
   end
 
   describe 'New page' do
     before do
-      visit new_user_category_path(@user)
+      click_link 'Add New Category'
     end
 
     it 'Displays the heading' do
-      expect(page).to have_content('New Category')
+      expect(page).to have_content('NEW CATEGORY')
     end
 
     it 'Creates a new category' do
@@ -75,11 +61,11 @@ RSpec.describe 'Categories', type: :feature do
 
   describe 'Show page' do
     before do
-      visit user_category_path(@user, @category)
+      click_link 'Food'
     end
 
     it 'Displays the heading' do
-      expect(page).to have_content('Expenses')
+      expect(page).to have_content('EXPENSES')
     end
 
     it 'Displays the button to add a new expense' do
