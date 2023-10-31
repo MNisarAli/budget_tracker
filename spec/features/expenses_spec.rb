@@ -15,11 +15,12 @@ RSpec.feature 'Expenses', type: :feature do
 
   describe 'New page' do
     before do
-      visit new_user_category_expense_path(@user, @category)
+      click_link 'Food'
+      click_link 'Add New Expense'
     end
 
     it 'Displays the heading' do
-      expect(page).to have_content('New Expense')
+      expect(page).to have_content('NEW EXPENSE')
     end
 
     it 'Creates a new expense' do
